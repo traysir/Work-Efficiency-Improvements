@@ -1,0 +1,101 @@
+import pyautogui
+import time
+import keyboard
+
+def check_checkbox(x, y):
+    pyautogui.click(x, y)
+
+def automate_olafs(username_coordinates, password, filter_coordinates, date_coordinates):
+    keyboard.press_and_release('win')
+    time.sleep(1.5)
+
+    keyboard.write('olafs')
+    time.sleep(1.5)
+    keyboard.press_and_release('enter')
+
+    time.sleep(7)
+    
+    pyautogui.click(597, 354)  
+    time.sleep(3)
+    pyautogui.click(username_coordinates[0], username_coordinates[1])
+    
+    time.sleep(3)
+    # Enter password
+    pyautogui.write(password)
+    time.sleep(1)
+    keyboard.press_and_release('enter')
+    time.sleep(5)
+
+    
+    pyautogui.click(155, 120) 
+    time.sleep(3)
+   
+    pyautogui.hotkey('tab')
+    pyautogui.press('r')
+    pyautogui.hotkey('tab')
+    pyautogui.press('3')
+    time.sleep(1)
+   
+    pyautogui.click(filter_coordinates[0], filter_coordinates[1])
+    time.sleep(1)
+   
+    keyboard.press_and_release('tab')
+    time.sleep(0.1)
+    
+    keyboard.press_and_release('tab')
+    time.sleep(0.1)
+    
+    keyboard.press_and_release('tab')
+    time.sleep(0.1)
+    
+    pyautogui.click(1201, 339)  
+    time.sleep(1)
+    
+    pyautogui.click(638, 352)  
+    time.sleep(1)
+
+def run_application(tracking_numbers, text_box_x, text_box_y, checkbox_x, checkbox_y):
+    for number in tracking_numbers:
+        if number:
+            pyautogui.click(text_box_x, text_box_y)
+            pyautogui.write(number)
+            check_checkbox(checkbox_x, checkbox_y)
+            pyautogui.click(text_box_x, text_box_y)
+            pyautogui.hotkey('ctrl', 'a')
+            pyautogui.press('delete')
+
+            time.sleep(0.5)  
+
+if __name__ == "__main__":
+    tracking_numbers = [
+        "6284",
+        "3805",
+        "6401",
+        "4014",
+        "0716",
+        "7988",
+        "6445",
+        "0207",
+        "4493",
+        "5564",
+        "2615",
+        "0749",
+        "1958",
+        "1980"
+       
+        # Put last 5 instead of last 4
+         # Add more tracking numbers as needed
+    ]
+    
+    text_box_x = 171  
+    text_box_y = 477  
+    checkbox_x = 53  
+    checkbox_y = 549  
+
+    username_coordinates = (672, 413)  
+    password = (left blank for privacy purposes)
+    filter_coordinates = (615, 320)  
+    date_coordinates = (1201, 339)  
+    
+    automate_olafs(username_coordinates, password, filter_coordinates, date_coordinates,)
+    run_application(tracking_numbers, text_box_x, text_box_y, checkbox_x, checkbox_y)
