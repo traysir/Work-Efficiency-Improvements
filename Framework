@@ -50,5 +50,4 @@ ups_system.update_package_status(package_id_1, 'Ready for pickup')
 # Handling logistics
 ups_system.assign_package_to_truck(package_id_1, 'Truck1')
 
-# ... (further functionality would involve more complex operations and methods)
 
