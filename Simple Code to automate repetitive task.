@@ -61,3 +61,37 @@ if __name__ == "__main__":
     config = load_config('config.json')
     automate_olafs(config['username_coordinates'], config['password'], config['filter_coordinates'])
     run_application(config['tracking_numbers'], config['text_box_x'], config['text_box_y'], config['checkbox_x'], config['checkbox_y'])
+
+
+
+
+# JSON FILE HERE: 
+
+{
+    "username_coordinates": [672, 413],
+    "password": "Rolltid322!!",
+    "filter_coordinates": [615, 320],
+    "date_coordinates": [1201, 339],
+    "text_box_x": 171,
+    "text_box_y": 477,
+    "checkbox_x": 53,
+    "checkbox_y": 549,
+    "tracking_numbers": [
+        "6284",
+        "3805",
+        "6401",
+        "4014",
+        "0716",
+        "7988",
+        "6445",
+        "0207",
+        "4493",
+        "5564",
+        "2615",
+        "0749",
+        "1958",
+        "1980"
+    ]
+}
+
+
